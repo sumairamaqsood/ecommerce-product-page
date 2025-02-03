@@ -4,7 +4,7 @@
   --Orange: hsl(26, 100%, 55%);
   --Pale-orange: hsl(25, 100%, 94%);
   --dk-blue: hsl(220, 13%, 13%);
-  --dk-grayish-blue: hsl(219, 9%, 45%);
+  --dk-grayish-blue: hsl(217, 9%, 45%);
   --grayish-blue: hsl(220, 14%, 75%);
   --lt-grayish-blue: hsl(223, 64%, 98%);
   --white: hsl(0, 0%, 100%);
@@ -200,6 +200,10 @@ nav ul li a:hover {
   object-fit: cover;
   width: 22.5%;
 }
+.img_small img.active {
+  border: 2px solid var(--Orange);
+  opacity: 0.7;
+}
 .product_content {
   width: 100%;
   margin: 0 auto;
@@ -222,7 +226,7 @@ nav ul li a:hover {
   width: 100%;
   margin: 2rem 0;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 1.5rem;
   color: var(--grayish-blue);
 }
@@ -257,8 +261,100 @@ nav ul li a:hover {
   align-items: center;
   margin-top: 3rem;
 }
-.btn {
+.btns {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.btns button {
+  outline: none;
+  border: none;
+  background-color: var(--lt-grayish-blue);
+  color: var(--Orange);
+  padding: 0.7rem 1.2rem;
+  font-family: inherit;
+  font-size: 1.7rem;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.btns button:active {
+  transform: scale(0.18);
+  /* background-color: var(--Pale-orange); */
+}
+
+.btns .qty_number {
+  color: var(--black);
+}
+
+.add_cart {
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  background-color: var(--Orange);
+  font-family: inherit;
+  color: var(--black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 4rem;
+  font-weight: 600;
+}
+
+.add_cart svg {
+  margin-right: 1rem;
+}
+
+/* Modal  */
+
+.modal {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.modal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal_wrapper {
+  width: 450px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img_thumbnail_modal img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.img_small_modal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.img_small_modal img {
+  object-fit: cover;
+  width: 100px;
+}
+
+.close_icon {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  cursor: pointer;
 }

@@ -120,13 +120,16 @@ nav ul li a:hover {
   top: 80px;
   right: 0;
   background-color: var(--white);
-  width: 380px;
+  width: 300px;
   padding: 1.5rem;
   box-shadow: 0 5px 10px var(--dk-blue);
   border-radius: 5px;
   display: none;
 }
 
+.cart_box.display {
+  display: block;
+}
 .cart_box .box_header {
   font-size: 2rem;
   font-weight: 600;
@@ -146,7 +149,7 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  display: none;
+  /* display: none; */
 }
 .pro_content > img {
   border-radius: 10px;
@@ -274,7 +277,7 @@ nav ul li a:hover {
   color: var(--Orange);
   padding: 0.7rem 1.2rem;
   font-family: inherit;
-  font-size: 1.7rem;
+  font-size: 2rem;
   cursor: pointer;
   font-weight: 800;
 }

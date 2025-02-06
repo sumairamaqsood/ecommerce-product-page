@@ -6,12 +6,24 @@ const normalPrice = document.querySelector('.normal_price');
 const qtylabel = document.querySelector('.qty_label');
 const procontainer = document.querySelector('.pro_content');
 const cartEmpty = document.querySelector('.cart_empty');
+const checkoutBtn = document.querySelector('.checkout-btn');
 
 //btns increment decrement
 const qty = document.querySelector('.qty_number');
 const decr = document.querySelector('.decrement');
 const incr = document.querySelector('.increment');
 const addCart = document.querySelector('.add_cart');
+
+//images
+
+const imageLarge = document.querySelector('.img_thumbnail img');
+const thumbImage = document.querySelectorAll('.img_small img');
+
+//modal
+const modalEl = document.querySelector('.modal');
+const closeModal = document.querySelector('.close_icon');
+const LImgModal = document.querySelector('.img_thumbnail_modal img');
+const sImgModal = document.querySelectorAll('.img_small_modal img');
 
 let proPrice = 125;
 let totalQty = qty.innerHTML;
@@ -50,12 +62,39 @@ addCart.addEventListener('click', () => {
                         </div>
                         <div class="trash">
                             <img src="./images/icon-delete.svg" alt="" class= 'trash_img'>
-                        </div>`;
+                        </div>
+                       `;
   procontainer.insertAdjacentHTML('afterbegin', html);
   cartEmpty.innerHTML = '';
   document.querySelector('.trash_img').addEventListener('click', () => {
     cartEmpty.innerHTML = 'Your cart is empty';
     procontainer.innerHTML = '';
     qtylabel.style.display = 'none';
+  });
+});
+
+thumbImage.forEach((img, indx) => {
+  indx++;
+  img.addEventListener('click', (e) => {
+    imageLarge.src = `images/image-product-${indx}.jpg`;
+    thumbImage.forEach((thumb) => thumb.classList.remove('active'));
+    img.classList.add('active');
+  });
+});
+
+imageLarge.addEventListener('click', () => {
+  modalEl.style.display = 'block';
+});
+
+closeModal.addEventListener('click', () => {
+  modalEl.style.display = 'none';
+});
+
+sImgModal.forEach((mimg, indx) => {
+  indx++;
+  mimg.addEventListener('click', () => {
+    LImgModal.src = `images/image-product-${indx}.jpg`;
+    sImgModal.forEach((thumb) => thumb.classList.remove('active'));
+    mimg.classList.add('active');
   });
 });
